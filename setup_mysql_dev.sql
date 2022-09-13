@@ -16,5 +16,5 @@ GRANT SELECT ON `performance_schema`.* TO 'hbnb_dev'@'localhost';
 -- grant all previleges for the hbnb_dev_db only.
 GRANT ALL PRIVILEGES ON `hbnb_dev_db`.* TO 'hbnb_dev'@'localhost';
 
--- fulush changes
+-- flush changes
 FLUSH PRIVILEGES;
