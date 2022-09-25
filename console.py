@@ -12,7 +12,6 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 import re
-from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
