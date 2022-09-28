@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# install nginx iff not installed already
-
+# install nginx if not installed already and sets up server for deployment
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
