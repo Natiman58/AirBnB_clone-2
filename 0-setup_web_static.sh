@@ -21,8 +21,7 @@ mkdir -p /data/web_static/shared/
 mkdir -p /data/web_static/releases/test/
 
 # create a fake HTML file that prints Holberton School
-echo "
-<html>
+echo "<html>
   <head>
   </head>
   <body>
