@@ -16,7 +16,7 @@ def do_pack():
     archive_path = 'versions/web_static_{}'.format(time)
 
     file = local('sudo tar -czvf {}.tgz web_static'.format(
-        archive_path), capture=True)
+        archive_path))
 
     if file:
         return file
