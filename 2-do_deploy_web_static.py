@@ -2,7 +2,6 @@
 """
     A fabric script that distributes the archive we created to remote servers
 """
-
 from fabric.api import local, run, put, env
 from datetime import datetime
 
@@ -38,14 +37,14 @@ def do_deploy(archive_path):
         current = '/data/web_static/current'
         path = '/data/web_static/releases/' + file_av.strip('.tgz')
 
-        put(archive_path, '/tmp')
-        run('mkdir -p {}'.format(path))
-        run('tar -xzf /tmp/{} -C {}'.format(file_av, path))
-        run('rm /tmp/{}'.format(file_av))
-        run('mv {}/web_static/* {}'.format(path, path))
-        run('rm -rf {}/web_static'.format(path))
-        run('rm -rf {}'.format(current))
-        run('ln -s {} {}'.format(path, current))
+        put(archive_path, '/tmp/')
+        run('sudo mkdir -p {}'.format(path))
+        run('sudo tar -xzf /tmp/{} -C {}'.format(file_av, path))
+        run('sudo rm /tmp/{}'.format(file_av))
+        #run('sudo mv {}/web_static/* {}/'.format(path, path))
+        run('sudo rm -rf {}/web_static'.format(path))
+        run('sudo rm -rf {}'.format(current))
+        run('sudo ln -s {} {}'.format(path, current))
         print("New version deployed!")
         return True
     except Exception:
