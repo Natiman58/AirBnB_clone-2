@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # A fabric script that generates wer_static.tgz archive using the do_pack fun
 
-from fabric.operations import local
+from fabric.api import local
 from datetime import datetime
 
 
