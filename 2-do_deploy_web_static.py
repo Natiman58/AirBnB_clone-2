@@ -41,6 +41,7 @@ def do_deploy(archive_path):
         run('sudo mkdir -p {}'.format(path))
         run('tar -xzf /tmp/{} -C {}'.format(file_av, path))
         run('rm /tmp/{}'.format(file_av))
+        run('mv {}/web_static/* {}'.format(path, path))
         run('rm -rf {}/web_static'.format(path))
         run('rm -rf {}'.format(current))
         run('ln -s {} {}'.format(path, current))
