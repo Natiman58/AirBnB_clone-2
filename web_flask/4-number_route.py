@@ -30,5 +30,23 @@ def c_text(text):
     return "C {}".format(text.replace('_', ' '))
 
 
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<string:text>', strict_slashes=False)
+def py_text(text="is_cool"):
+    """
+        Displays Python followed by the default value of <text>
+        replace '_' with ' '
+    """
+    return "Python {}".format(text.replace('_', ' '))
+
+
+@app.route('/number/<int:n>', strict_slashes=False)
+def num(n):
+    """
+        displays n is a number only if n is an integer
+    """
+    return "{} is a number".format(n)
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
