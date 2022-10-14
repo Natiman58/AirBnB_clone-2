@@ -77,7 +77,7 @@ class DBStorage:
     def delete(self, obj=None):
         """To delete the obj class from current database"""
         if obj:
-            self.__session.delete()
+            self.__session.delete(obj)
 
     def reload(self):
         """Create all the tables in the DB like sqlAlchemy"""
