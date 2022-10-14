@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
             arg_list = arg.split(" ")
             class_name = arg_list[0]
             if class_name not in storage.classes():
-                print("** class doesn't exist **")
+                print("** class doesn't exist  **")
                 return
             obj = eval("{}()".format(class_name))
 

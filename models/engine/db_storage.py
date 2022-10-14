@@ -57,7 +57,7 @@ class DBStorage:
             To return class obj with their references
         """
         classes = {"BaseModel": BaseModel,
-                   "USer": User,
+                   "User": User,
                    "State": State,
                    "City": City,
                    "Amenity": Amenity,
