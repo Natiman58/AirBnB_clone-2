@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
     A python script that starts a flask app
 """
 
