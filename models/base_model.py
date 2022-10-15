@@ -54,7 +54,7 @@ class BaseModel:
         dict_t["created_at"] = dict_t["created_at"].isoformat()
         dict_t["updated_at"] = dict_t["updated_at"].isoformat()
 
-        if "_sa_instance_state" in dict_t.keys():
+        if '_sa_instance_state' in dict_t.keys():
             dict_t.pop('_sa_instance_state', None)
         return dict_t
 
