@@ -36,7 +36,7 @@ class DBStorage:
             Query on current DB session for cls
             Arg: cls is the class name to inquire
         """
-        if cls:
+        if cls==None:
             objs = self.__session.query(self.classes()[cls])
         else:
             objs = self.__session.query(State).all()
@@ -95,7 +95,7 @@ class DBStorage:
 
     def close(self):
         """To close the scoped session we created"""
-        self.__session.remove()
+        self.__session.close()
 
 
 
