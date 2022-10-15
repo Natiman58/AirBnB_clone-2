@@ -38,19 +38,23 @@ class Place(BaseModel, Base):
     amenity_ids = []
 
     if getenv('HBNB_TYPE_STORAGE') == "db":
-        reviews = relationship('Review', backref='place', cascade='all, delete-orphan')
-        amenities = relationship('Amenity', secondary='place_amenity', backref='places', viewonly=True)
+        reviews = relationship('Review', backref='place',
+                               cascade='all, delete-orphan')
+        amenities = relationship('Amenity', secondary='place_amenity',
+                                 backref='places', viewonly=True)
     else:
         @property
         def reviews(self):
             """A getter attribute that returns list of reviews"""
-            r = [review for review in models.storage.all(Review) if review.place_id == self.id]
+            r = [review for review in models.storage.all(Review)
+                 if review.place_id == self.id]
             return r
 
         @property
         def amenities(self):
             """Returns the list of Amenity instances based on amenity_ids"""
-            a = [amenity for amenity in models.storage.all(Amenity) if amenity.id in self.amenity_ids]
+            a = [amenity for amenity in models.storage.all(Amenity)
+                 if amenity.id in self.amenity_ids]
             return a
 
         @amenities.setter
