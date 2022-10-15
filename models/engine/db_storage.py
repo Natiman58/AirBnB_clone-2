@@ -36,7 +36,7 @@ class DBStorage:
             Query on current DB session for cls
             Arg: cls is the class name to inquire
         """
-        if cls==None:
+        if cls is None:
             objs = self.__session.query(self.classes()[cls])
         else:
             objs = self.__session.query(State).all()
@@ -89,17 +89,11 @@ class DBStorage:
         from models.review import Review
 
         Base.metadata.create_all(self.__engine)
-        self.__session = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        self.__session = sessionmaker(bind=self.__engine,
+                                      expire_on_commit=False)
         Session = scoped_session(self.__session)
         self.__session = Session()
 
     def close(self):
         """To close the scoped session we created"""
         self.__session.close()
-
-
-
-
-
-
-
