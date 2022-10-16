@@ -36,7 +36,7 @@ class DBStorage:
             Query on current DB session for cls
             Arg: cls is the class name to inquire
         """
-        if cls is None:
+        if cls:
             objs = self.__session.query(self.classes()[cls])
         else:
             objs = self.__session.query(State).all()
