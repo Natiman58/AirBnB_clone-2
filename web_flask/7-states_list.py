@@ -16,7 +16,7 @@ def states():
     """
         Displays HTML page of all the states in the storage
     """
-    return render_template('7-states_list.html', states=storage.all('State'))
+    return render_template('7-states_list.html', states=storage.all(State))
 
 
 @app.teardown_appcontext

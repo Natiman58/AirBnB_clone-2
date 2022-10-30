@@ -14,6 +14,7 @@ class Amenity(BaseModel, Base):
     """
 
     __tablename__ = "amenities"
+    __table_args__ = ({'mysql_default_charset': 'latin1'})
     name = Column(String(128), nullable=False)
     if getenv("HBNB_TYPE_STORAGE") == "db":
         place_amenities = relationship('Place',

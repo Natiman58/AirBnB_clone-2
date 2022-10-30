@@ -17,7 +17,7 @@ def states():
         Displays HTML page of all the states in the storage
     """
     return render_template('7-states_list.html',
-                           states=storage.all('State'))
+                           states=storage.all(State))
 
 
 @app.route('/states/<string:id>', strict_slashes=False)
