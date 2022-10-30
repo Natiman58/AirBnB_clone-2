@@ -36,8 +36,8 @@ class DBStorage:
             Query on current DB session for cls
             Arg: cls is the class name to inquire
         """
-        if cls:
-            objs = self.__session.query(self.classes()[cls])
+        if type(cls) == str:
+            objs = self.__session.query(self.classes().cls())
         else:
             objs = self.__session.query(State).all()
             objs += self.__session.query(City).all()
